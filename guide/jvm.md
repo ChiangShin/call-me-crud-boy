@@ -10,7 +10,7 @@ https://zhuanlan.zhihu.com/p/34426768
 
  
 
-![img](img/imgiuiu.jpeg)
+![img][1]
 
 ###    加载
 
@@ -142,7 +142,7 @@ JVM初始化步骤
 
  
 
-![img](img/imgsfgsdfg.jpeg)
+![img][2]
 
 JVM内存结构主要有三大块：**堆内存**、**方法区**和**栈**。堆内存是JVM中最大的一块由年轻代和老年代组成，而年轻代内存又被分成三部分，**Eden空间**、**From Survivor空间**、**To Survivor空间**,默认情况下年轻代按照**8:1:1**的比例来分配；
 
@@ -150,7 +150,7 @@ JVM内存结构主要有三大块：**堆内存**、**方法区**和**栈**。�
 
 在通过一张图来了解如何通过参数来控制各区域的内存大小
 
-![img](img/img234234fdsf.jpeg)
+![img][3]
 
  
 
@@ -170,7 +170,7 @@ JVM内存结构主要有三大块：**堆内存**、**方法区**和**栈**。�
 
 从更高的一个维度再次来看JVM和系统调用之间的关系
 
-![img](img/img2344234.jpeg)
+![img][4]
 
  
 
@@ -200,7 +200,7 @@ Java虚拟机规范对这个区域的限制非常宽松，除了和Java堆一样
 
 方法区有时被称为持久代（PermGen）。
 
-![img](img/img.jpeg)
+![img][5]
 
  
 
@@ -228,7 +228,7 @@ Java虚拟机规范对这个区域的限制非常宽松，除了和Java堆一样
 
 这段程序的数据在内存中的存放如下：
 
-![img](..\img\idfdfdf.jpeg)
+![img][6]
 
 通过JConsole工具可以查看运行中的Java程序（比如Eclipse）的一些信息：堆内存的分配，线程的数量以及加载的类的个数；
 
@@ -281,3 +281,14 @@ Exception in thread “main”: java.lang.OutOfMemoryError: request <size> bytes
 > Exception in thread “main”: java.lang.OutOfMemoryError: <reason> <stack trace>（Native method）
 
 原因：同样是本地方法内存分配失败，只不过是JNI或者本地方法或者Java虚拟机发现
+
+
+
+
+
+[1]:img/imgiuiu.jpeg
+[2]:img/imgsfgsdfg.jpeg
+[3]:img/img234234fdsf.jpeg
+[4]:img/img2344234.jpeg
+[5]:img/img.jpeg
+[6]:img/idfdfdf.jpeg
