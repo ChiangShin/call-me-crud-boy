@@ -1,5 +1,0 @@
-WITHjjjj 
-test1(pid,content) AS (SELECT pid, p.pid||p.NAME||p.PRICE||p.PROMOPRICE||p.PROMOSTART||p.PROMOEND FROM DB2INST1.PRODUCT p),
-test2(pid,content) AS (SELECT pid, p.pid||p.NAME||p.PRICE||p.PROMOPRICE||p.PROMOSTART||p.PROMOEND FROM DB2INST1."PRODUCT_Tmp" p )
-SELECT t1.pid FROM test1 t1,test2 t2 WHERE t1.pid = t2.pid AND t1.content != t2.content;
------
