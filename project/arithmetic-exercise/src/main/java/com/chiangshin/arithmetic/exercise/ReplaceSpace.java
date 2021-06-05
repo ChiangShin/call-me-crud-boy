@@ -1,6 +1,11 @@
 package com.chiangshin.arithmetic.exercise;
 
+import java.util.Arrays;
+
 /**
+ * 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
+ * 输入：s = "We are happy."
+ * 输出："We%20are%20happy."
  * @Author jx
  * @Date 2020/11/3 23:31
  */
@@ -18,38 +23,41 @@ public class ReplaceSpace {
         return sb.toString();
     }
 
-    /**
-     * 字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。
-     * 比如，输入字符串"abcdefg"和数字2，该函数将返回左旋转两位得到的结果"cdefgab"。
-     * @param s
-     * @param n
-     * @return
-     */
-    public static String reverseLeftWords(String s, int n) {
-
-        String res = "";
-        for(int i = n; i < n + s.length(); i++)
-            res += s.charAt(i % s.length());
-        return res;
-
-    }
-
-    public static int search(int[] nums, int target) {
-        int num = 0;
-        for(int i = 0; i< nums.length;i++){
-            if(nums[i]> target){
-                return num;
-            }else if(nums[i] == target){
-                num++;
-            }
+    public static String replaceSpace2(String s){
+        if (s == null || s.length() == 0){
+            return s;
         }
-        return num;
+
+        // 统计空格个数
+        int blank = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) == ' ')
+                blank++;
+        }
+        if (blank == 0) return s;
+
+        // 替换完之后该字符串的长度
+        int length = blank * 2 + s.length();
+
+        char[] arr = new char[length];
+
+        int index = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) == ' ') {
+                arr[index] = '%';
+                arr[index+1] = '2';
+                arr[index+2] = '0';
+                index=index+2;
+            }else{
+                arr[index] = s.charAt(i);
+            }
+            index++;
+        }
+        return new String(arr, 0, length);
     }
 
     public static void main(String[] args) {
-        int[] ss = {1,3,42,3,35,24,23,35,3};
-        System.out.println(search(ss,3));
-
+        System.out.println(replaceSpace2("We are happy."));
     }
 
 }
